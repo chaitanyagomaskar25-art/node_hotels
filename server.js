@@ -687,4 +687,5 @@ app.listen(3000)
 // cluster => small part of db
 // dotenv => it's a module used to manage sensitive information in your application 
 // --- it is useful for keeping sensitive data like API key, database connections strings and other environment-specific configurations seperated from your code
-// command => 
+
+// hosting nodejs => 
