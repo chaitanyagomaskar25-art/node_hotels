@@ -632,37 +632,32 @@ const { default: mongoose } = require("mongoose");
 
 
 
+require('dotenv').config();   // always at top
+
 const express = require('express');
 const app = express();
 
-require('dotenv').config(); // this tell server have .env file and server takes data from it
+// importing mongo connection
+const db = require('./db');
 
-// exporting mongoDb to nodejs file
-const db = require('./db')
-
-// body parser set up 
 const bodyParser = require('body-parser');
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
-app.get('/',(req, res)=>{
-    res.send("Welcome to our Hotel")
+app.get('/', (req, res) => {
+    res.send("Welcome to our Hotel");
 });
-
 
 const personRoutes = require('./routes/personRoutes');
 const menuRouter = require('./routes/menuRoutes');
 
-
 app.use('/person', personRoutes);
 app.use('/menu', menuRouter);
 
-// to access .env files variable we use process.env.variableName
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
-
 
 // express router => express router is a way to modularize and organize your route handling code in an express.js application 
 // ============= 3/3/26===================================================
