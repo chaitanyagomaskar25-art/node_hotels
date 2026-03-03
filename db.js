@@ -41,6 +41,7 @@ const mongoose = require('mongoose');
 const mongoURL = process.env.MONGO_URL;
 
 mongoose.connect(mongoURL).catch((err) => {
+    
     console.log('Failed to connect to MongoDB:', err.message);
 });
 
