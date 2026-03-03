@@ -632,29 +632,34 @@ const { default: mongoose } = require("mongoose");
 
 
 
-// const express = require('express');
-// const app = express();
+const express = require('express');
+const app = express();
 
-// // exporting mongoDb to nodejs file
-// const db = require('./db')
+require('dotenv').config(); // this tell server have .env file and server takes data from it
 
-// // body parser set up 
-// const bodyParser = require('body-parser');
-// app.use(bodyParser.json())
+// exporting mongoDb to nodejs file
+const db = require('./db')
 
-// app.get('/',(req, res)=>{
-//     res.send("Welcome to our Hotel")
-// });
+// body parser set up 
+const bodyParser = require('body-parser');
+app.use(bodyParser.json())
 
-
-// const personRoutes = require('./routes/personRoutes');
-// const menuRouter = require('./routes/menuRoutes');
+app.get('/',(req, res)=>{
+    res.send("Welcome to our Hotel")
+});
 
 
-// app.use('/person', personRoutes);
-// app.use('/menu', menuRouter);
+const personRoutes = require('./routes/personRoutes');
+const menuRouter = require('./routes/menuRoutes');
 
-// app.listen(3000)
+
+app.use('/person', personRoutes);
+app.use('/menu', menuRouter);
+
+// to access .env files variable we use process.env.variableName
+const PORT = process.env.PORT || 3000
+
+app.listen(3000)
 
 
 // express router => express router is a way to modularize and organize your route handling code in an express.js application 
@@ -669,4 +674,17 @@ const { default: mongoose } = require("mongoose");
 // to add all files at once => git add .
 // to remove added data => git rm -r --cached filename
 //  to save it's snapshort => git commit -m "useful massege"
-//   
+//  to push it on github => create new repo and add commands for push
+// to make all changes visible on github => git push
+// if other person is also working on same repo and we want that persons changes in our file => git pull
+
+// host mongoDB database
+// ---mongodb have it's own server called mongoDB Atlas which provides free cluster for user where you can host your database for free.
+// --- mongoDB Atlas offers a cloud-based platform for hosting MongoDB databases.
+// --- the free tier allows developers to explore and experiment with db without incurring any cost
+
+
+// cluster => small part of db
+// dotenv => it's a module used to manage sensitive information in your application 
+// --- it is useful for keeping sensitive data like API key, database connections strings and other environment-specific configurations seperated from your code
+// command => 

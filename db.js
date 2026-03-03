@@ -1,11 +1,12 @@
 // ========== MongoDb connecting with nodeJS==================================================
 
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+
+require('dotenv').config();
 
 // define mongodb connection URL 
-const mongoURL = 'mongodb://127.0.0.1:27017/databaseName'
-
-// setup mongodb connection
+// const mongoURL = 'mongodb://127.0.0.1:27017/databaseName'
+const mongoURL = process.env.DB_URL// setup mongodb connection
 mongoose.connect(mongoURL)
 
 // to access default connection object => 
