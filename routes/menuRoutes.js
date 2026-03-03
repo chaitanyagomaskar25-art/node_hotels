@@ -34,7 +34,7 @@ router.get('/', async (req, res)=>{
 router.get('/:taste', async (req, res)=>{
    const taste = req.params.taste;
     try {
-        if(taste == 'sour' || taste == 'sweet' || taste == 'bitter'){
+        if(taste == 'sour' || taste == 'sweet' || taste == 'spicy'){
             
             const responce = await Menu.find({taste: taste});
             console.log('responce fetched');
