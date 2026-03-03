@@ -659,7 +659,9 @@ app.use('/menu', menuRouter);
 // to access .env files variable we use process.env.variableName
 const PORT = process.env.PORT || 3000
 
-app.listen(PORT)
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 
 // express router => express router is a way to modularize and organize your route handling code in an express.js application 
