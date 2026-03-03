@@ -663,3 +663,10 @@ const { default: mongoose } = require("mongoose");
 
 // git => it is like time machine for your code.
 // --- it is a tool that keeps record of every version of your code, so you can always go back to previous state if something goes wrong.
+// to start git => git init
+// to check status => git status
+// to add file => git add filename 
+// to add all files at once => git add .
+// to remove added data => git rm -r --cached filename
+//  to save it's snapshort => git commit -m "useful massege"
+//   
