@@ -1,0 +1,32 @@
+{
+  "name": "node_js",
+  "version": "1.0.0",
+  "description": "This is node js file , made for practice",
+  "license": "ISC",
+  "author": "Chaitanya",
+  "type": "commonjs",
+  "main": "server.js",
+  "start": "nodemon server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.2",
+    "chalk": "^5.6.2",
+    "cookie-parser": "^1.4.7",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "lodash": "^4.17.23",
+    "moment": "^2.30.1",
+    "mongodb": "^7.1.0",
+    "mongoose": "^9.2.3",
+    "postman": "^0.2.0"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
